@@ -15,13 +15,14 @@
  */
 char *_strcpy(char *dest, char *src);
 {
-	int index = 0;
+	unsigned int i;
+	unsigned int len = strlen(src);
 
-	while (src[index])
+	for (i = 0; i <= len; i++)
 	{
-		dest[index] = src[index];
-		index++;
+		dest[i] = src[i];
 	}
+	dest[i] = '\0';
 
 	return (dest);
 }
