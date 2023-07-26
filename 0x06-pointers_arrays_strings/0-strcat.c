@@ -1,7 +1,7 @@
 /*
- * File-name: 0-strcat.c
+ * File: 0-strcat.c
  * Auth: Augustine Rita
- */ 
+ */
 
 #include "main.h"
 /**
@@ -28,4 +28,4 @@ char *_strcat(char *dest, char *src)
 		count2++;
 	}
 	return (dest);
-}
+
