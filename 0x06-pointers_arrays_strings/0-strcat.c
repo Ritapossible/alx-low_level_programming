@@ -12,20 +12,21 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int count = 0, count2 = 0;
+	int lengthD, lengthS;
 
-	while (*(dest + count) != '\0')
-	{
-		count++;
-	}
+	lengthD = 0;
+	lengthS = 0;
 
-	while (count2 >= 0)
+	while (*(dest + lengthD) != '\0')
+		lengthD++;
+
+	while (*(src + lengthS) != '\0' && lengthD < 97)
 	{
-		*(dest + count) = *(src + count2);
-		if (*(src + count2) == '\0')
-			break;
-		count++;
-		count2++;
+		*(dest + lengthD) = *(src + lengthS);
+		lengthD++;
+		lengthS++;
 	}
+	*(dest + lengthD) = '\0';
 	return (dest);
+}
 
