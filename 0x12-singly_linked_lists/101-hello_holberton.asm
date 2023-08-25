@@ -1,29 +1,18 @@
-	extern printf
+section .data
+    hello db "Hello, Holberton",0   ; Null-terminated string
 
-	section .text
+section .text
+global main
 
-	global main
+extern printf
 
 main:
+    sub rsp, 8                      ; Align the stack
 
-	push rbp
+    lea rdi, [hello]                ; Load the address of the string into rdi
+    call printf                    ; Call printf
 
-	mov rdi,fmt
+    add rsp, 8                      ; Restore the stack
+    xor eax, eax                    ; Return 0
+    ret
 
-	mov rsi,msg
-
-	mov rax,0
-
-	call printf
-
-	pop rbp
-
-	mov rax,0
-
-	ret
-
-	section .data
-
-msg:	 db "Hello, Holberton", 0
-
-fmt:	 db "%s", 10, 0
