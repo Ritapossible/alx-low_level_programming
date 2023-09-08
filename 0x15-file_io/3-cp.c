@@ -5,36 +5,35 @@
 
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * error_file - checks if a file can be opened.
- * @file_from: The file_from.
- * @file_to: The file_to.
+ * error_file - checks whether files can be opened.
+ * @file_from: file_from.
+ * @file_to: file_to.
  * @argv: Arguments vector.
- * Return: Nothing to return.
+ * Return: Expects no return.
  */
-
 void error_file(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from the file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to the file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 }
 
 /**
- * main - The entry point of the program
+ * main - The main entry point of the code.
  * @argc: Number of arguments.
  * @argv: Arguments vector.
  * Return: Always 0.
  */
-
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, error_close;
