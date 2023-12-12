@@ -1,5 +1,5 @@
 /*
- * File: 100-sorted_hash_table.c
+ * File: 100-sorted_hash_table.
  * Author: Augustine Rita 
  */
 
